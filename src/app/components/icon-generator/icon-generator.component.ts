@@ -3,8 +3,20 @@ import { IconDefinition, fas } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-generator',
-  templateUrl: './icon-generator.component.html',
-  styleUrls: ['./icon-generator.component.css'],
+  template: `
+    <button mat-raised-button color="primary" (click)="generateIcon()">
+      Generate New Icon
+    </button>
+    <fa-icon [icon]="randomIcon" size="6x" *ngIf="randomIcon"></fa-icon>
+    <mat-progress-spinner
+      class="example-margin"
+      color="primary"
+      mode="indeterminate"
+      *ngIf="!randomIcon"
+    >
+    </mat-progress-spinner>
+  `,
+  styles: [''],
 })
 export class IconGeneratorComponent {
   faIcons = fas;
