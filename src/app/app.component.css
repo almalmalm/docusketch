@@ -1,0 +1,8 @@
+.generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  height: 150px;
+  justify-content: space-between;
+}
