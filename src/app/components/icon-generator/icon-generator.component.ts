@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-icon-generator',
