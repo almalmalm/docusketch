@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconGeneratorComponent } from './components/icon-generator/icon-generator.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IconGeneratorComponent
   ],
   imports: [
     BrowserModule,
