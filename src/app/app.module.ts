@@ -6,15 +6,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconGeneratorComponent } from './components/icon-generator/icon-generator.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    IconGeneratorComponent
-  ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule
-  ],
+  declarations: [AppComponent, IconGeneratorComponent],
+  imports: [BrowserModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
