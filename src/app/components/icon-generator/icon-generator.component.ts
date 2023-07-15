@@ -12,7 +12,7 @@ import { IconDefinition, fas } from '@fortawesome/free-solid-svg-icons';
       class="example-margin"
       color="primary"
       mode="indeterminate"
-      *ngIf="!randomIcon"
+      *ngIf="randomIcon === null"
     >
     </mat-progress-spinner>
   `,
@@ -21,11 +21,12 @@ import { IconDefinition, fas } from '@fortawesome/free-solid-svg-icons';
 export class IconGeneratorComponent {
   faIcons = fas;
 
-  randomIcon: IconDefinition | undefined;
+  randomIcon: IconDefinition | null | undefined;
 
   constructor() {}
 
   generateIcon() {
+    this.randomIcon = null;
     const randomKey = Object.keys(fas);
     const randomIcon = randomKey[Math.floor(Math.random() * randomKey.length)];
     const result = fas[`${randomIcon}`];
