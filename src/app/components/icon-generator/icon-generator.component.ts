@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-icon-generator',
@@ -9,16 +10,20 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 export class IconGeneratorComponent {
   faIcons = fas;
 
-  constructor() {
-    console.log(
-      this.randomKey[Math.floor(Math.random() * this.randomKey.length)]
-    );
-    console.log(this.randomIcon);
-    console.log(this.finally);
-  }
-  randomKey = Object.keys(fas);
-  randomIcon =
-    this.randomKey[Math.floor(Math.random() * this.randomKey.length)];
+  randomIcon: any;
 
-  finally = fas[`${this.randomIcon}`];
+  constructor() {
+    console.log(this.randomIcon);
+  }
+
+  generateIcon() {
+    const randomKey = Object.keys(fas);
+    const randomIcon = randomKey[Math.floor(Math.random() * randomKey.length)];
+
+    const final = fas[`${randomIcon}`];
+    console.log(final);
+    setTimeout(() => {
+      this.randomIcon = final;
+    }, 3000);
+  }
 }
